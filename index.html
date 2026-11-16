@@ -112,7 +112,7 @@ function msg(t,e){notice={t,e}}
 function setErr(id,t){$("#e_"+id).textContent=t;return !t}
 function table(head,rows){return rows.length?`<div class="tw"><table><thead><tr>${head.map(h=>`<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`:`<p class="small">Nothing here yet.</p>`}
 const btn=(a,id,t,c="")=>`<button class="${c}" data-act="${a}" data-id="${id}">${t}</button>`;
-const options=(list,label,empty="None available")=>list.length?list.map(x=>`<option value="${x.id}">${esc(label(x))}</option>`).join(""):`<option value="">${empty}</option>`;
+const options=(list,label)=>list.map(x=>`<option value="${x.id}">${esc(label(x))}</option>`).join("");
 
 /* ---------- LOGIN / REGISTER (only customers register; staff accounts are made by the administrator) ---------- */
 async function loginView(reg){
